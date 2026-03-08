@@ -5,37 +5,44 @@ import { site } from "../config/site";
 const species = [
   {
     name: "Smallmouth Bass",
+    image: "/images/activities/fishing/smallmouthbass.jpg",
     description:
       "The Kings River's crown jewel. Trophy-class smallmouth thrive in these clear Ozark waters, with fish regularly exceeding 18 inches. Aggressive fighters that strike topwater and crankbaits.",
     primary: true,
   },
   {
     name: "Spotted Bass",
+    image: "/images/activities/fishing/spottedbass.jpg",
     description:
       "Abundant throughout the Kings River, spotted bass offer fast action on lighter tackle. Often found near rocky structure and submerged logs.",
   },
   {
     name: "Spotted Gar",
+    image: "/images/activities/fishing/spottedgar.jpg",
     description:
       "A prehistoric predator with a distinctive elongated snout. Spotted gar patrol the slower pools and backwater areas of the Kings River.",
   },
   {
     name: "Channel Catfish",
+    image: "/images/activities/fishing/channelcat.jpg",
     description:
       "Excellent table fare found in deeper holes and runs. Best targeted at dawn, dusk, or after rain using cut bait or chicken liver.",
   },
   {
     name: "Ozark Bass",
+    image: "/images/activities/fishing/ozarkbass.jpg",
     description:
       "A species unique to the Ozark region. Smaller than their cousins but scrappy fighters found in rocky riffles and clear tributaries.",
   },
   {
     name: "Longear Sunfish",
+    image: "/images/activities/fishing/longear.webp",
     description:
       "Vibrantly colored panfish found in shallow pools and eddies. Fun on ultralight tackle and a favorite for young anglers.",
   },
   {
     name: "Green Sunfish",
+    image: "/images/activities/fishing/greensunfish.jpg",
     description:
       "Hardy and aggressive, green sunfish are plentiful throughout the river. Great for beginners and always willing to bite.",
   },
@@ -125,14 +132,10 @@ const species = [
                 fish.primary && "ring-2 ring-sunset/40",
               ]}
             >
-              <!-- Placeholder image -->
-              <div
-                class:list={[
-                  "h-40 w-full",
-                  fish.primary
-                    ? "bg-gradient-to-br from-river via-river-dark to-forest"
-                    : "bg-gradient-to-br from-sand-dark/60 via-earth-light/40 to-forest/30",
-                ]}
+              <img
+                src={fish.image}
+                alt={fish.name}
+                class="h-40 w-full object-cover"
               />
               <div class="p-5">
                 <div class="flex items-center gap-2 mb-2">
