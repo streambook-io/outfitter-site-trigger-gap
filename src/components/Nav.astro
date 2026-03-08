@@ -1,0 +1,128 @@
+---
+const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: `${base}pricing`, label: "Rentals & Pricing" },
+  { href: `${base}float-trips`, label: "Float Trips" },
+  { href: `${base}fishing`, label: "Fishing" },
+  { href: `${base}camping`, label: "Camping" },
+  { href: `${base}contact`, label: "Contact" },
+  { href: `${base}river-conditions`, label: "River Conditions" },
+];
+
+function isActive(href: string): boolean {
+  if (href === base) return currentPath === base;
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="sticky top-0 z-50">
+  <!-- Top bar with phone number -->
+  <div class="bg-forest text-white text-center text-sm py-1.5 font-body">
+    <a href="tel:479-253-5444" class="hover:text-sand-light transition-colors">
+      <svg class="inline-block w-3.5 h-3.5 mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      </svg>
+      479-253-5444
+    </a>
+  </div>
+
+  <!-- Main navigation -->
+  <nav class="bg-white/95 backdrop-blur-md border-b border-sand/40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-18 lg:h-20">
+        <!-- Logo -->
+        <a href={base} class="flex-shrink-0 group">
+          <div class="font-heading text-forest font-bold text-lg sm:text-xl lg:text-2xl tracking-wide group-hover:text-forest-light transition-colors">
+            TRIGGER GAP OUTFITTERS
+          </div>
+          <div class="text-earth text-xs sm:text-sm tracking-wider -mt-0.5">
+            Kings River &bull; Eureka Springs, AR
+          </div>
+        </a>
+
+        <!-- Desktop nav links -->
+        <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+          {navLinks.map((link) => (
+            <a
+              href={link.href}
+              class:list={[
+                "px-3 py-2 text-sm font-medium rounded-md transition-colors whitespace-nowrap",
+                isActive(link.href)
+                  ? "text-river-dark bg-river-light/15"
+                  : "text-earth hover:text-forest hover:bg-sand-light/60",
+              ]}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+            class="ml-2 inline-flex items-center px-5 py-2.5 bg-sunset text-white text-sm font-semibold rounded-lg hover:bg-sunset-dark transition-colors shadow-sm hover:shadow-md"
+          >
+            Book Now
+          </a>
+        </div>
+
+        <!-- Mobile hamburger button -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-earth hover:text-forest hover:bg-sand-light/60 transition-colors"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-sand/30">
+      <div class="px-4 py-3 space-y-1 bg-white/98 backdrop-blur-md">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              "block px-4 py-2.5 text-base font-medium rounded-lg transition-colors",
+              isActive(link.href)
+                ? "text-river-dark bg-river-light/15"
+                : "text-earth hover:text-forest hover:bg-sand-light/60",
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+        <div class="pt-2 pb-1">
+          <a
+            href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+            class="block w-full text-center px-5 py-3 bg-sunset text-white text-base font-semibold rounded-lg hover:bg-sunset-dark transition-colors shadow-sm"
+          >
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  btn?.addEventListener("click", () => {
+    const isOpen = menu?.classList.contains("hidden") === false;
+    menu?.classList.toggle("hidden");
+    hamburgerIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+    btn.setAttribute("aria-expanded", String(!isOpen));
+  });
+</script>

@@ -1,0 +1,182 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Book Your Trip | Trigger Gap Outfitters"
+  description="Reserve your Kings River kayak, canoe, or float trip online or by phone. Book with Trigger Gap Outfitters near Eureka Springs, Arkansas."
+>
+  <!-- Page Header -->
+  <section class="relative bg-gradient-to-br from-forest via-forest-light to-river-dark py-20 lg:py-28">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+        Book Your Trip
+      </h1>
+      <p class="mt-4 text-lg sm:text-xl text-sand-light/90 max-w-2xl mx-auto">
+        Reserve your Kings River adventure online or by phone.
+      </p>
+    </div>
+  </section>
+
+  <!-- Important Notice -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
+    <div class="bg-white border-l-4 border-sunset rounded-lg shadow-lg p-6 sm:p-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 mt-0.5">
+          <svg class="w-7 h-7 text-sunset" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-heading text-xl sm:text-2xl font-bold text-forest">
+            Important: Call Before Your Trip
+          </h2>
+          <p class="mt-2 text-earth text-base sm:text-lg">
+            You <strong class="text-sunset-dark">MUST</strong> call 3 days in advance to check water levels before your trip.
+          </p>
+          <a
+            href="tel:479-253-5444"
+            class="mt-3 inline-flex items-center gap-2 text-lg font-semibold text-river-dark hover:text-river transition-colors"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            479-253-5444
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reserve Online -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-forest mb-4">
+        Reserve Online
+      </h2>
+      <p class="text-earth text-lg mb-8 max-w-xl mx-auto">
+        Check availability and book your canoe, kayak, raft, or SUP rental in just a few clicks.
+      </p>
+      <a
+        href="https://streambook.io/book/trigger-gap-outfitters"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 px-8 py-4 bg-sunset text-white text-lg font-semibold rounded-xl hover:bg-sunset-dark transition-colors shadow-lg hover:shadow-xl"
+      >
+        Book Now on Streambook
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+      <p class="mt-4 text-earth-light text-sm">
+        Opens in a new tab on our booking partner's site.
+      </p>
+    </div>
+  </section>
+
+  <!-- What to Bring Checklist -->
+  <section class="py-16 lg:py-20 bg-sand-light/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-forest text-center mb-10">
+        What to Bring
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Bring -->
+        <div class="bg-white rounded-xl shadow-sm p-6 sm:p-8">
+          <h3 class="font-heading text-xl font-bold text-forest mb-5 flex items-center gap-2">
+            <svg class="w-6 h-6 text-river" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Bring Along
+          </h3>
+          <ul class="space-y-3">
+            {[
+              "Water & drinks",
+              "Snacks / lunch",
+              "Dry bags",
+              "Koozies",
+              "Hat",
+              "Water shoes or sandals",
+              "Sunscreen",
+              "Fishing gear & license",
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-earth">
+                <svg class="w-5 h-5 text-river flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Do NOT Bring -->
+        <div class="bg-white rounded-xl shadow-sm p-6 sm:p-8 border-t-4 border-sunset">
+          <h3 class="font-heading text-xl font-bold text-sunset-dark mb-5 flex items-center gap-2">
+            <svg class="w-6 h-6 text-sunset" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+            </svg>
+            Do NOT Bring
+          </h3>
+          <ul class="space-y-3">
+            {[
+              { item: "Styrofoam coolers", note: "prohibited by law" },
+              { item: "Glass containers", note: "prohibited by law" },
+            ].map((entry) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-sunset flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span class="text-earth">
+                  {entry.item}
+                  <span class="ml-1 text-sm font-medium text-sunset-dark">({entry.note})</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trip Reminders -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-forest text-center mb-10">
+        Trip Reminders
+      </h2>
+      <div class="bg-white rounded-xl shadow-sm border border-sand/60 divide-y divide-sand/40">
+        {[
+          {
+            icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+            text: "River trips operate 8 AM - 2 PM (latest start time is 2 PM)",
+          },
+          {
+            icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+            text: "Arrive 15 minutes early for check-in",
+          },
+          {
+            icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+            text: "All boats must have life jackets for each person (provided)",
+          },
+          {
+            icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
+            text: "Coolers must have fastened lids or be tied down",
+          },
+          {
+            icon: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+            text: "All can beverages must be in a floating holder",
+          },
+        ].map((reminder) => (
+          <div class="flex items-start gap-4 px-6 py-5">
+            <svg class="w-6 h-6 text-river flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={reminder.icon} />
+            </svg>
+            <p class="text-earth text-base sm:text-lg">{reminder.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

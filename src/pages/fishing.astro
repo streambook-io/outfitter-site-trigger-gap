@@ -1,0 +1,290 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const species = [
+  {
+    name: "Smallmouth Bass",
+    description:
+      "The Kings River's crown jewel. Trophy-class smallmouth thrive in these clear Ozark waters, with fish regularly exceeding 18 inches. Aggressive fighters that strike topwater and crankbaits.",
+    primary: true,
+  },
+  {
+    name: "Spotted Bass",
+    description:
+      "Abundant throughout the Kings River, spotted bass offer fast action on lighter tackle. Often found near rocky structure and submerged logs.",
+  },
+  {
+    name: "Spotted Gar",
+    description:
+      "A prehistoric predator with a distinctive elongated snout. Spotted gar patrol the slower pools and backwater areas of the Kings River.",
+  },
+  {
+    name: "Channel Catfish",
+    description:
+      "Excellent table fare found in deeper holes and runs. Best targeted at dawn, dusk, or after rain using cut bait or chicken liver.",
+  },
+  {
+    name: "Ozark Bass",
+    description:
+      "A species unique to the Ozark region. Smaller than their cousins but scrappy fighters found in rocky riffles and clear tributaries.",
+  },
+  {
+    name: "Longear Sunfish",
+    description:
+      "Vibrantly colored panfish found in shallow pools and eddies. Fun on ultralight tackle and a favorite for young anglers.",
+  },
+  {
+    name: "Green Sunfish",
+    description:
+      "Hardy and aggressive, green sunfish are plentiful throughout the river. Great for beginners and always willing to bite.",
+  },
+];
+---
+
+<Layout
+  title="Fishing the Kings River | Trigger Gap Outfitters"
+  description="World-class smallmouth bass fishing on the Kings River in the Arkansas Ozarks. Trophy section, species guide, and fishing kayak rentals."
+>
+  <!-- Page Header -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-forest via-forest-light to-river-dark"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
+        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Fishing the Kings River
+        </h1>
+        <p class="text-lg sm:text-xl text-sand-light/90 max-w-2xl">
+          World-class smallmouth bass fishing in the heart of the Ozarks.
+        </p>
+      </div>
+    </section>
+
+    <!-- Trophy Section Highlight -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="border-l-4 border-sunset bg-white rounded-r-lg shadow-md p-6 sm:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 mt-1">
+                <svg class="w-7 h-7 text-sunset" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-forest mb-3">
+                  Trophy Section
+                </h2>
+                <p class="text-earth mb-5 leading-relaxed">
+                  The stretch of the Kings River from <strong class="text-forest">Trigger Gap to 62 Bridge</strong> is designated as a
+                  <strong class="text-forest">Trophy Section</strong> by the Arkansas Game and Fish Commission.
+                </p>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-sunset/10 flex items-center justify-center mt-0.5">
+                      <span class="w-2 h-2 rounded-full bg-sunset"></span>
+                    </span>
+                    <span class="text-earth"><strong class="text-forest">Daily limit:</strong> 1 smallmouth bass</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-sunset/10 flex items-center justify-center mt-0.5">
+                      <span class="w-2 h-2 rounded-full bg-sunset"></span>
+                    </span>
+                    <span class="text-earth"><strong class="text-forest">Minimum size:</strong> 18 inches</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-sunset/10 flex items-center justify-center mt-0.5">
+                      <span class="w-2 h-2 rounded-full bg-sunset"></span>
+                    </span>
+                    <span class="text-earth"><strong class="text-forest">Catch and release recommended</strong> to preserve this exceptional fishery</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Species Grid -->
+    <section class="py-16 sm:py-20 bg-sand-light/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-forest mb-3">
+            Species of the Kings River
+          </h2>
+          <p class="text-earth-light text-lg max-w-2xl mx-auto">
+            The Kings River supports a diverse and healthy fishery. Here are the species you can expect to encounter.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {species.map((fish) => (
+            <div
+              class:list={[
+                "bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden",
+                fish.primary && "ring-2 ring-sunset/40",
+              ]}
+            >
+              <!-- Placeholder image -->
+              <div
+                class:list={[
+                  "h-40 w-full",
+                  fish.primary
+                    ? "bg-gradient-to-br from-river via-river-dark to-forest"
+                    : "bg-gradient-to-br from-sand-dark/60 via-earth-light/40 to-forest/30",
+                ]}
+              />
+              <div class="p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <h3 class="font-heading text-lg font-bold text-forest">
+                    {fish.name}
+                  </h3>
+                  {fish.primary && (
+                    <span class="text-xs font-semibold uppercase tracking-wider text-sunset bg-sunset/10 px-2 py-0.5 rounded-full">
+                      Trophy Fish
+                    </span>
+                  )}
+                </div>
+                <p class="text-earth text-sm leading-relaxed">
+                  {fish.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Fishing Kayak Promo -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <!-- Placeholder image -->
+          <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-river-dark via-forest to-earth overflow-hidden shadow-lg">
+            <div class="w-full h-full flex items-center justify-center">
+              <div class="text-center text-white/60">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <p class="text-sm font-medium">Jackson Liska Fishing Kayak</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-forest mb-4">
+              Jackson Liska Fishing Kayak
+            </h2>
+            <p class="text-earth text-lg leading-relaxed mb-6">
+              Purpose-built for anglers, the Jackson Liska is the ultimate fishing kayak for the Kings River. At 12 feet 1 inch, it offers outstanding stability and maneuverability in both flatwater and light current.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-river flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-earth">Integrated rod and tackle storage</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-river flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-earth">Stand or sit -- fish any way you prefer</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-river flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-earth">12'1" length for stability on the Kings River</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-river flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-earth">Perfect for targeting trophy smallmouth</span>
+              </li>
+            </ul>
+            <div class="flex flex-wrap items-center gap-4">
+              <span class="font-heading text-3xl font-bold text-sunset">$100<span class="text-lg text-earth-light font-normal">/day</span></span>
+              <a
+                href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center px-6 py-3 bg-sunset text-white font-semibold rounded-lg hover:bg-sunset-dark transition-colors shadow-sm hover:shadow-md"
+              >
+                Book a Fishing Kayak
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Regulations & Links -->
+    <section class="py-16 sm:py-20 bg-sand-light/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-forest mb-8">
+            Regulations & Resources
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <svg class="w-8 h-8 text-river mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <h3 class="font-heading text-lg font-bold text-forest mb-2">
+                Arkansas Fishing License
+              </h3>
+              <p class="text-earth text-sm leading-relaxed mb-4">
+                A valid Arkansas fishing license is required for all anglers 16 and older. Licenses can be purchased online or at local retailers.
+              </p>
+              <a
+                href="https://www.agfc.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-river-dark font-medium text-sm hover:text-river transition-colors"
+              >
+                Arkansas Game & Fish Commission
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <svg class="w-8 h-8 text-river mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 class="font-heading text-lg font-bold text-forest mb-2">
+                Leave No Trace
+              </h3>
+              <p class="text-earth text-sm leading-relaxed">
+                The Kings River is a treasured natural resource. Pack out everything you pack in, dispose of waste responsibly, and respect the wildlife and habitat that make this fishery exceptional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-forest via-forest-light to-river-dark"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
+          Ready to Fish the Kings River?
+        </h2>
+        <p class="text-sand-light/90 text-lg mb-8 max-w-xl mx-auto">
+          Reserve your fishing kayak or float trip today and experience world-class Ozark fishing.
+        </p>
+        <a
+          href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center px-8 py-4 bg-sunset text-white text-lg font-semibold rounded-lg hover:bg-sunset-dark transition-colors shadow-md hover:shadow-lg"
+        >
+          Book Now
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+</Layout>
