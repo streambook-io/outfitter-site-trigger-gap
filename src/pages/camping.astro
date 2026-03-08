@@ -24,26 +24,7 @@ const campingRules = [
   },
 ];
 
-const nearbyLodging = [
-  {
-    name: "RiverDream",
-    description:
-      "Luxury tent camping with direct river access. A unique glamping experience on the banks of the Kings River, combining outdoor adventure with comfort.",
-    availability: "Available on Airbnb & VRBO",
-  },
-  {
-    name: "At the River on Ironwood Lane B&B",
-    description:
-      "A charming bed and breakfast nestled along the Kings River. Comfortable accommodations with a warm, personal touch from your hosts.",
-    availability: "Available on Airbnb & VRBO",
-  },
-  {
-    name: "Dinner Bell Ranch Cabins",
-    description:
-      "Cozy cabins located within 5 miles of Trigger Gap Outfitters. A great option for groups or families wanting a full-service lodging experience.",
-    availability: "Located within 5 miles",
-  },
-];
+
 ---
 
 <Layout
@@ -203,42 +184,6 @@ const nearbyLodging = [
                     {rule.description}
                   </p>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Nearby Lodging Section -->
-    <section class="py-16 sm:py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-forest mb-3">
-            Prefer a Roof Over Your Head?
-          </h2>
-          <p class="text-earth-light text-lg max-w-2xl mx-auto">
-            These nearby lodging options offer comfortable accommodations close to the Kings River.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {nearbyLodging.map((lodge) => (
-            <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <!-- Placeholder image -->
-              <div class="h-44 w-full bg-gradient-to-br from-sand-dark/50 via-earth-light/30 to-forest/20" />
-              <div class="p-6">
-                <h3 class="font-heading text-xl font-bold text-forest mb-2">
-                  {lodge.name}
-                </h3>
-                <p class="text-earth text-sm leading-relaxed mb-4">
-                  {lodge.description}
-                </p>
-                <p class="text-river-dark text-sm font-medium flex items-center gap-1.5">
-                  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {lodge.availability}
-                </p>
               </div>
             </div>
           ))}
