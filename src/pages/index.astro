@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Layout title="Trigger Gap Outfitters | Kings River Kayak & Canoe Rentals | Eureka Springs, AR">
@@ -33,7 +34,7 @@ import Layout from "../layouts/Layout.astro";
           Book Your Trip
         </a>
         <a
-          href={`${import.meta.env.BASE_URL}float-trips`}
+          href={`${base}float-trips`}
           class="inline-flex items-center rounded-lg border-2 border-white px-8 py-3.5 text-lg font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-forest"
         >
           View Float Options
@@ -155,7 +156,7 @@ import Layout from "../layouts/Layout.astro";
               Perfect for adventurous paddlers.
             </p>
             <a
-              href={`${import.meta.env.BASE_URL}float-trips`}
+              href={`${base}float-trips`}
               class="mt-4 inline-flex items-center text-sm font-semibold text-river transition hover:text-river-dark"
             >
               Learn More
@@ -187,7 +188,7 @@ import Layout from "../layouts/Layout.astro";
               swim along the way.
             </p>
             <a
-              href={`${import.meta.env.BASE_URL}float-trips`}
+              href={`${base}float-trips`}
               class="mt-4 inline-flex items-center text-sm font-semibold text-river transition hover:text-river-dark"
             >
               Learn More
@@ -219,7 +220,7 @@ import Layout from "../layouts/Layout.astro";
               unforgettable two-day journey.
             </p>
             <a
-              href={`${import.meta.env.BASE_URL}float-trips`}
+              href={`${base}float-trips`}
               class="mt-4 inline-flex items-center text-sm font-semibold text-river transition hover:text-river-dark"
             >
               Learn More
@@ -233,7 +234,7 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="mt-12 text-center">
         <a
-          href={`${import.meta.env.BASE_URL}float-trips`}
+          href={`${base}float-trips`}
           class="inline-flex items-center text-lg font-semibold text-river transition hover:text-river-dark"
         >
           View All Float Trips
