@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { site } from "../config/site";
 
 const campingRules = [
   {
@@ -28,7 +29,7 @@ const campingRules = [
 ---
 
 <Layout
-  title="Camping & Lodging | Trigger Gap Outfitters"
+  title={`Camping & Lodging | ${site.name}`}
   description="Primitive riverside camping on the Kings River and nearby lodging options in the Ozarks. $10/person/night at Trigger Gap Outfitters."
 >
   <!-- Page Header -->
@@ -114,8 +115,8 @@ const campingRules = [
                     <p class="font-semibold text-forest text-sm">Reservations Required</p>
                     <p class="text-earth text-sm mt-1">
                       Call ahead to reserve your campsite:
-                      <a href="tel:479-253-5444" class="text-river-dark font-medium hover:text-river transition-colors">
-                        479-253-5444
+                      <a href={site.phoneTel} class="text-river-dark font-medium hover:text-river transition-colors">
+                        {site.phone}
                       </a>
                     </p>
                   </div>
@@ -203,7 +204,7 @@ const campingRules = [
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+            href={site.booking.url} target="_blank" rel="noopener noreferrer"
             class="inline-flex items-center px-8 py-4 bg-sunset text-white text-lg font-semibold rounded-lg hover:bg-sunset-dark transition-colors shadow-md hover:shadow-lg"
           >
             Book Now
@@ -212,7 +213,7 @@ const campingRules = [
             </svg>
           </a>
           <a
-            href="tel:479-253-5444"
+            href={site.phoneTel}
             class="inline-flex items-center px-8 py-4 bg-white/10 text-white text-lg font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/30"
           >
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

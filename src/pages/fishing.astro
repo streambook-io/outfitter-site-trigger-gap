@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { site } from "../config/site";
 
 const species = [
   {
@@ -42,7 +43,7 @@ const species = [
 ---
 
 <Layout
-  title="Fishing the Kings River | Trigger Gap Outfitters"
+  title={`Fishing the Kings River | ${site.name}`}
   description="World-class smallmouth bass fishing on the Kings River in the Arkansas Ozarks. Trophy section, species guide, and fishing kayak rentals."
 >
   <!-- Page Header -->
@@ -206,7 +207,7 @@ const species = [
             <div class="flex flex-wrap items-center gap-4">
               <span class="font-heading text-3xl font-bold text-sunset">$100<span class="text-lg text-earth-light font-normal">/day</span></span>
               <a
-                href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+                href={site.booking.url} target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center px-6 py-3 bg-sunset text-white font-semibold rounded-lg hover:bg-sunset-dark transition-colors shadow-sm hover:shadow-md"
               >
                 Book a Fishing Kayak
@@ -239,7 +240,7 @@ const species = [
                 A valid Arkansas fishing license is required for all anglers 16 and older. Licenses can be purchased online or at local retailers.
               </p>
               <a
-                href="https://www.agfc.com"
+                href={site.externalLinks.agfc}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center text-river-dark font-medium text-sm hover:text-river transition-colors"
@@ -277,7 +278,7 @@ const species = [
           Reserve your fishing kayak or float trip today and experience world-class Ozark fishing.
         </p>
         <a
-          href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+          href={site.booking.url} target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center px-8 py-4 bg-sunset text-white text-lg font-semibold rounded-lg hover:bg-sunset-dark transition-colors shadow-md hover:shadow-lg"
         >
           Book Now

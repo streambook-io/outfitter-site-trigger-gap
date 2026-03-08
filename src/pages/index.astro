@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { site } from "../config/site";
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
-<Layout title="Trigger Gap Outfitters | Kings River Kayak & Canoe Rentals | Eureka Springs, AR">
+<Layout title={`${site.name} | Kings River Kayak & Canoe Rentals | Eureka Springs, AR`}>
   <!-- ============================== -->
   <!-- HERO SECTION                   -->
   <!-- ============================== -->
@@ -28,7 +29,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       </p>
       <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
         <a
-          href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+          href={site.booking.url} target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center rounded-lg bg-sunset px-8 py-3.5 text-lg font-semibold text-white shadow-lg transition hover:bg-sunset-dark hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-sunset focus:ring-offset-2 focus:ring-offset-forest"
         >
           Book Your Trip
@@ -297,7 +298,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
           </ul>
           <div class="mt-10">
             <a
-              href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+              href={site.booking.url} target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center rounded-lg bg-sunset px-8 py-3.5 text-lg font-semibold text-white shadow-lg transition hover:bg-sunset-dark hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-sunset focus:ring-offset-2"
             >
               Book Now
@@ -339,15 +340,15 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       <p class="mx-auto mt-4 max-w-xl text-lg text-white/85">
         Book online or call us at
         <a
-          href="tel:+14792535444"
+          href={site.phoneTel}
           class="font-semibold text-white underline decoration-white/40 underline-offset-2 transition hover:decoration-white"
         >
-          479-253-5444
+          {site.phone}
         </a>
       </p>
       <div class="mt-8">
         <a
-          href="https://streambook.io/book/trigger-gap-outfitters" target="_blank" rel="noopener noreferrer"
+          href={site.booking.url} target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center rounded-lg bg-sunset px-8 py-3.5 text-lg font-semibold text-white shadow-lg transition hover:bg-sunset-dark hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-sunset focus:ring-offset-2 focus:ring-offset-river-dark"
         >
           Book Your Trip
