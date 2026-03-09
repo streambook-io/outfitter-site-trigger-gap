@@ -35,12 +35,11 @@ function isActive(href: string): boolean {
       <div class="flex items-center justify-between h-18 lg:h-20">
         <!-- Logo -->
         <a href={base} class="flex-shrink-0 group">
-          <div class="font-heading text-forest font-bold text-lg sm:text-xl lg:text-2xl tracking-wide group-hover:text-forest-light transition-colors">
-            {site.nameUpper}
-          </div>
-          <div class="text-earth text-xs sm:text-sm tracking-wider -mt-0.5">
-            {site.tagline}
-          </div>
+          <img
+            src={`${base}images/tgo-logo.png`}
+            alt={site.nameUpper}
+            class="h-12 sm:h-14 lg:h-16 w-auto"
+          />
         </a>
 
         <!-- Desktop nav links -->
