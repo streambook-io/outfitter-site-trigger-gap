@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://triggergapoutfitters.com/sitemap-index.xml

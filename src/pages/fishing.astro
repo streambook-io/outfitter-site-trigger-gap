@@ -43,6 +43,7 @@ const species = [
   {
     name: "Green Sunfish",
     image: "/images/activities/fishing/greensunfish.jpg",
+    objectPosition: "object-top",
     description:
       "Hardy and aggressive, green sunfish are plentiful throughout the river. Great for beginners and always willing to bite.",
   },
@@ -51,7 +52,7 @@ const species = [
 
 <Layout
   title={`Fishing the Kings River | ${site.name}`}
-  description="World-class smallmouth bass fishing on the Kings River in the Arkansas Ozarks. Trophy section, species guide, and fishing kayak rentals."
+  description="World-class smallmouth bass fishing on the Kings River near Eureka Springs, Arkansas. Trophy section, species guide, and fishing kayak rentals."
 >
   <!-- Page Header -->
     <section class="relative overflow-hidden">
@@ -62,7 +63,7 @@ const species = [
           Fishing the Kings River
         </h1>
         <p class="text-lg sm:text-xl text-sand-light/90 max-w-2xl">
-          World-class smallmouth bass fishing in the heart of the Ozarks.
+          World-class smallmouth bass fishing near Eureka Springs in the heart of the Ozarks.
         </p>
       </div>
     </section>
@@ -136,7 +137,7 @@ const species = [
                 <img
                   src={fish.image}
                   alt={fish.name}
-                  class="h-full w-full object-cover"
+                  class={`h-full w-full object-cover ${fish.objectPosition ?? ""}`}
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
