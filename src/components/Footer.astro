@@ -3,6 +3,7 @@ import { site } from "../config/site";
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 const quickLinks = [
+  { href: `${base}book`, label: "Book Your Trip" },
   { href: `${base}pricing`, label: "Rentals & Pricing" },
   { href: `${base}float-trips`, label: "Float Trips" },
   { href: `${base}fishing`, label: "Fishing" },
@@ -103,7 +104,7 @@ const currentYear = new Date().getFullYear();
 
           <!-- Book Now CTA -->
           <a
-            href={site.booking.url} target="_blank" rel="noopener noreferrer"
+            href={`${base}book`}
             class="inline-flex items-center px-6 py-3 bg-sunset text-white font-semibold rounded-lg hover:bg-sunset-dark transition-colors shadow-md hover:shadow-lg"
           >
             Book Now
